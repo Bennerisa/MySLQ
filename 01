@@ -1,0 +1,18 @@
+create table Motorista (
+  id integer auto_increment primary key,
+  nome varchar(255) not null,
+  CPF char(11) not null,
+  numero_cnh integer 
+);
+
+create table CNH (
+  numero integer primary key,
+  Categoria char(2) not null,
+  Data_Vencimento date not null,
+  id_motorista integer
+);
+
+alter table Motorista add foreign key (numero_cnh) references CNH (numero);
+alter table CNH add foreign key (id_motorista) references Motorista (id);
+
+describe Motorista
