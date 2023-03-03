@@ -1,0 +1,15 @@
+create table Departamento (
+  Código integer auto_increment primary key,
+  nome varchar(255) not null
+);
+
+create table Funcionário (
+  id integer auto_increment primary key,
+  CPF char(11) not null,
+  Nome varchar(255)  not null,
+  DDD char(2) not null,
+  Número char(9) not null,
+  Código_Departamento integer
+);
+
+describe Departamento
